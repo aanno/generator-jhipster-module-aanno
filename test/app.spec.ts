@@ -2,13 +2,16 @@ import {describe, beforeEach} from "mocha"
 import {join} from "path"
 import {copySync} from "fs-extra"
 import {assert} from "yeoman-assert"
-import {run} from "yeoman-test"
+import {Constructor, run} from "yeoman-test"
+import {Generator} from "yeoman-generator"
 import {MyGenerator} from "../generators/app"
 
 describe('JHipster generator aanno', () => {
+  const generator: Constructor<Generator> = MyGenerator.new
   describe('Test with Maven and AngularX', () => {
     beforeEach(done => {
-      run(join(__dirname, '../generators/app'))
+      // run(join(__dirname, '../generators/app/index.ts'))
+      run(generator, {resolved: true})
         .inTmpDir(dir => {
           copySync(join(__dirname, '../test/templates/maven-angularX'), dir);
         })

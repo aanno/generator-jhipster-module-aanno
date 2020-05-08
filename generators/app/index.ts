@@ -1,43 +1,75 @@
 import "chalk"
 import {satisfies} from "semver"
 
-const BaseGenerator = require('generator-jhipster/generators/generator-base');
+interface IPromptAnswers {
+  message: string
+}
+
+declare class CBaseGenerator {
+  message: string
+  jhipsterAppConfig: any
+  baseName: string
+  packageName: string
+  packageFolder: string
+  clientFramework: any
+  clientPackageManager: any
+  angularAppName: string
+  buildTool: any
+  template: any
+  options: Map<string,string>
+  promptAnswers: IPromptAnswers
+
+  getAllJhipsterConfig: () => any
+  getAngularAppName: () => string
+  printJHipsterLogo: () => void
+  async: () => any
+  prompt: ([]) => Promise<any>
+  registerModule: (...module: string[]) => void
+  installDependencies: (object) => void
+
+  log: (msg: string) => void
+  error: (msg: string) => void
+  warning: (msg: string) => void
+}
+
+interface IBaseGeneratorConstructor {
+  new(): CBaseGenerator
+}
+
+const BaseGenerator: IBaseGeneratorConstructor = require('generator-jhipster/generators/generator-base');
 const jhipsterConstants = require('generator-jhipster/generators/generator-constants');
 const packagejs = require('../../package.json');
 
 export class MyGenerator extends BaseGenerator {
 
-  constructor() {
-      super();
-  }
-
   get initializing() {
+    const that = this
     return {
       init(args) {
         if (args === 'default') {
           // do something when argument is 'default'
-          this.message = 'default message';
+          that.message = 'default message';
         }
       },
       readConfig() {
-        this.jhipsterAppConfig = this.getAllJhipsterConfig();
-        if (!this.jhipsterAppConfig) {
-          this.error('Cannot read .yo-rc.json');
+        that.jhipsterAppConfig = that.getAllJhipsterConfig();
+        if (!that.jhipsterAppConfig) {
+          that.error('Cannot read .yo-rc.json');
         }
       },
       displayLogo() {
         // it's here to show that you can use functions from generator-jhipster
         // this function is in: generator-jhipster/generators/generator-base.js
-        this.printJHipsterLogo();
+        that.printJHipsterLogo();
 
         // Have Yeoman greet the user.
-        this.log(`\nWelcome to the ${chalk.bold.yellow('JHipster aanno')} generator! ${chalk.yellow(`v${packagejs.version}\n`)}`);
+        that.log(`\nWelcome to the ${chalk.bold.yellow('JHipster aanno')} generator! ${chalk.yellow(`v${packagejs.version}\n`)}`);
       },
       checkJhipster() {
-        const currentJhipsterVersion = this.jhipsterAppConfig.jhipsterVersion;
+        const currentJhipsterVersion = that.jhipsterAppConfig.jhipsterVersion;
         const minimumJhipsterVersion = packagejs.dependencies['generator-jhipster'];
         if (!satisfies(currentJhipsterVersion, minimumJhipsterVersion)) {
-          this.warning(
+          that.warning(
             `\nYour generated project used an old JHipster version (${currentJhipsterVersion})... you need at least (${minimumJhipsterVersion})\n`
           );
         }
