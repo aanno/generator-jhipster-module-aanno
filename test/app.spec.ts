@@ -10,8 +10,8 @@ describe('JHipster generator aanno', () => {
   // const generator: Constructor<Generator> = MyGenerator.new
   describe('Test with Maven and AngularX', () => {
     beforeEach(done => {
-      run(join(__dirname, '../generators/app/index.ts'))
-      // run(generator)
+      // run(join(__dirname, '../generators/app'))
+      run(MyGenerator as any)
         .inTmpDir(dir => {
           copySync(join(__dirname, '../test/templates/maven-angularX'), dir);
         })
