@@ -1,0 +1,10 @@
+{
+  "generator-jhipster-module": {
+    "promptValues": {
+      "githubName": "aanno",
+      "authorName": "Thomas Pasch",
+      "authorEmail": "aanno.trash@gmail.com",
+      "authorUrl": ""
+    }
+  }
+}
