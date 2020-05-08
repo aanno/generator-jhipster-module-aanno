@@ -1,15 +1,15 @@
-const path = require('path');
-const fse = require('fs-extra');
-const assert = require('yeoman-assert');
-const helpers = require('yeoman-test');
+import "mocha"
+import {join} from "path"
+import {copySync} from "fs-extra"
+import {assert} from "yeoman-assert"
+import {run} from "yeoman-test"
 
 describe('JHipster generator aanno', () => {
   describe('Test with Maven and AngularX', () => {
     beforeEach(done => {
-      helpers
-        .run(path.join(__dirname, '../generators/app'))
+      run(join(__dirname, '../generators/app'))
         .inTmpDir(dir => {
-          fse.copySync(path.join(__dirname, '../test/templates/maven-angularX'), dir);
+          copySync(join(__dirname, '../test/templates/maven-angularX'), dir);
         })
         .withOptions({
           testmode: true
@@ -27,10 +27,9 @@ describe('JHipster generator aanno', () => {
 
   describe('Test with Gradle and React', () => {
     beforeEach(done => {
-      helpers
-        .run(path.join(__dirname, '../generators/app'))
+      run(join(__dirname, '../generators/app'))
         .inTmpDir(dir => {
-          fse.copySync(path.join(__dirname, '../test/templates/gradle-react'), dir);
+          copySync(join(__dirname, '../test/templates/gradle-react'), dir);
         })
         .withOptions({
           testmode: true
