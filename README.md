@@ -56,3 +56,9 @@ Apache-2.0 © [Thomas Pasch]()
 [github-actions-url]: https://github.com/aanno/generator-jhipster-aanno/actions
 [daviddm-image]: https://david-dm.org/aanno/generator-jhipster-aanno.svg?theme=shields.io
 [daviddm-url]: https://david-dm.org/aanno/generator-jhipster-aanno
+
+## Links
+
+- [eslint with typescript](https://github.com/typescript-eslint/typescript-eslint/blob/master/docs/getting-started/linting/README.md)
+- [mocha tests with typescript](https://journal.artfuldev.com/unit-testing-node-applications-with-typescript-using-mocha-and-chai-384ef05f32b2)
+- [prettier with eslint with typescript](https://www.robertcooper.me/using-eslint-and-prettier-in-a-typescript-project/)
