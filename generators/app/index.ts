@@ -1,4 +1,4 @@
-import "chalk"
+import {bold, yellow, red} from "chalk"
 import {satisfies} from "semver"
 import {IBaseGeneratorConstructor} from "../../types";
 
@@ -29,7 +29,7 @@ export class MyGenerator extends BaseGenerator {
         that.printJHipsterLogo();
 
         // Have Yeoman greet the user.
-        that.log(`\nWelcome to the ${chalk.bold.yellow('JHipster aanno')} generator! ${chalk.yellow(`v${packagejs.version}\n`)}`);
+        that.log(`\nWelcome to the ${bold.yellow('JHipster aanno')} generator! ${yellow(`v${packagejs.version}\n`)}`);
       },
       checkJhipster() {
         const currentJhipsterVersion = that.jhipsterAppConfig.jhipsterVersion;
@@ -119,12 +119,12 @@ export class MyGenerator extends BaseGenerator {
     try {
       this.registerModule('generator-jhipster-aanno', 'entity', 'post', 'entity', 'aanno&#39;s jhipster test module');
     } catch (err) {
-      this.log(`${chalk.red.bold('WARN!')} Could not register as a jhipster entity post creation hook...\n`);
+      this.log(`${red.bold('WARN!')} Could not register as a jhipster entity post creation hook...\n`);
     }
   }
 
   install() {
-    const logMsg = `To install your dependencies manually, run: ${chalk.yellow.bold(`${this.clientPackageManager} install`)}`;
+    const logMsg = `To install your dependencies manually, run: ${yellow.bold(`${this.clientPackageManager} install`)}`;
 
     const injectDependenciesAndConstants = err => {
       if (err) {

@@ -1,4 +1,4 @@
-import "chalk"
+import {bold, yellow, red, green, white} from "chalk"
 import {IBaseGeneratorConstructor} from "../../types";
 
 const BaseGenerator: IBaseGeneratorConstructor = require('generator-jhipster/generators/generator-base');
@@ -17,13 +17,13 @@ module.exports = class extends BaseGenerator {
         }
       },
       displayLogo() {
-        that.log(chalk.white(`Running ${chalk.bold('JHipster rain')} Generator! ${chalk.yellow(`v${packagejs.version}\n`)}`));
+        that.log(white(`Running ${bold('JHipster rain')} Generator! ${yellow(`v${packagejs.version}\n`)}`));
       },
       validate() {
         // this shouldn't be run directly
         if (!that.entityConfig) {
           that.env.error(
-            `${chalk.red.bold('ERROR!')} This sub generator should be used only from JHipster and cannot be run directly...\n`
+            `${red.bold('ERROR!')} This sub generator should be used only from JHipster and cannot be run directly...\n`
           );
         }
       }
@@ -105,7 +105,7 @@ module.exports = class extends BaseGenerator {
 
   end() {
     if (this.yourOptionKey) {
-      this.log(`\n${chalk.bold.green('rain enabled')}`);
+      this.log(`\n${bold.green('rain enabled')}`);
     }
   }
 };
