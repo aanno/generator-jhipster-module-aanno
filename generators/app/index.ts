@@ -6,6 +6,11 @@ const jhipsterConstants = require('generator-jhipster/generators/generator-const
 const packagejs = require('../../package.json');
 
 export class MyGenerator extends BaseGenerator {
+
+  constructor() {
+      super();
+  }
+
   get initializing() {
     return {
       init(args) {

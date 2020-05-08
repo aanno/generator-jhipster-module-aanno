@@ -1,8 +1,9 @@
-import "mocha"
+import {describe, beforeEach} from "mocha"
 import {join} from "path"
 import {copySync} from "fs-extra"
 import {assert} from "yeoman-assert"
 import {run} from "yeoman-test"
+import {MyGenerator} from "../generators/app"
 
 describe('JHipster generator aanno', () => {
   describe('Test with Maven and AngularX', () => {
