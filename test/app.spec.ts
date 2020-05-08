@@ -13,6 +13,7 @@ describe('JHipster generator aanno', () => {
       // run(join(__dirname, '../generators/app'))
       run(MyGenerator as any)
         .inTmpDir(dir => {
+          copySync(join(__dirname, '../generators/app'), dir);
           copySync(join(__dirname, '../test/templates/maven-angularX'), dir);
         })
         .withOptions({
@@ -31,8 +32,10 @@ describe('JHipster generator aanno', () => {
 
   describe('Test with Gradle and React', () => {
     beforeEach(done => {
-      run(join(__dirname, '../generators/app'))
+      // run(join(__dirname, '../generators/app'))
+      run(MyGenerator as any)
         .inTmpDir(dir => {
+          copySync(join(__dirname, '../generators/app'), dir);
           copySync(join(__dirname, '../test/templates/gradle-react'), dir);
         })
         .withOptions({

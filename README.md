@@ -62,3 +62,5 @@ Apache-2.0 © [Thomas Pasch]()
 - [eslint with typescript](https://github.com/typescript-eslint/typescript-eslint/blob/master/docs/getting-started/linting/README.md)
 - [mocha tests with typescript](https://journal.artfuldev.com/unit-testing-node-applications-with-typescript-using-mocha-and-chai-384ef05f32b2)
 - [prettier with eslint with typescript](https://www.robertcooper.me/using-eslint-and-prettier-in-a-typescript-project/)
+- [problem with es5/es6 classes](https://stackoverflow.com/questions/51860043/javascript-es6-typeerror-class-constructor-client-cannot-be-invoked-without-ne)
+- https://github.com/yeoman/yeoman-test/issues/105
