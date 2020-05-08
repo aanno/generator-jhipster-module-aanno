@@ -1,17 +1,17 @@
 import {describe, beforeEach} from "mocha"
 import {join} from "path"
 import {copySync} from "fs-extra"
-import {assert} from "yeoman-assert"
+import {file} from "yeoman-assert"
 import {Constructor, run} from "yeoman-test"
-import {Generator} from "yeoman-generator"
+// import {Generator} from "yeoman-generator"
 import {MyGenerator} from "../generators/app"
 
 describe('JHipster generator aanno', () => {
-  const generator: Constructor<Generator> = MyGenerator.new
+  // const generator: Constructor<Generator> = MyGenerator.new
   describe('Test with Maven and AngularX', () => {
     beforeEach(done => {
-      // run(join(__dirname, '../generators/app/index.ts'))
-      run(generator, {resolved: true})
+      run(join(__dirname, '../generators/app/index.ts'))
+      // run(generator)
         .inTmpDir(dir => {
           copySync(join(__dirname, '../test/templates/maven-angularX'), dir);
         })
@@ -25,7 +25,7 @@ describe('JHipster generator aanno', () => {
     });
 
     it('generate dummy.txt file', () => {
-      assert.file(['dummy-maven.txt', 'dummy-angularX.txt']);
+      file(['dummy-maven.txt', 'dummy-angularX.txt']);
     });
   });
 
@@ -45,7 +45,7 @@ describe('JHipster generator aanno', () => {
     });
 
     it('generate dummy.txt file', () => {
-      assert.file(['dummy-gradle.txt', 'dummy-react.txt']);
+      file(['dummy-gradle.txt', 'dummy-react.txt']);
     });
   });
 });

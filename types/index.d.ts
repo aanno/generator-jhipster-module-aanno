@@ -1,10 +1,9 @@
-interface IPromptAnswers {
-  message: string
+interface IOptions {
+  entityConfig: any
+  yourOptionKey: string
 }
 
-export class CBaseGenerator {
-  message: string
-  jhipsterAppConfig: any
+interface IJHipsterAppConfig {
   baseName: string
   packageName: string
   packageFolder: string
@@ -12,17 +11,46 @@ export class CBaseGenerator {
   clientPackageManager: any
   angularAppName: string
   buildTool: any
+  jhipsterVersion: string
+}
+
+interface ILogging {
+  log: (msg: string) => void
+  error: (msg: string) => void
+  warning: (msg: string) => void
+}
+
+interface IPromptAnswers {
+  message: string
+}
+
+export class CBaseGenerator implements IOptions, ILogging, IJHipsterAppConfig {
+  message: string
+  jhipsterAppConfig: IJHipsterAppConfig
+  baseName: string
+  packageName: string
+  packageFolder: string
+  clientFramework: any
+  clientPackageManager: any
+  angularAppName: string
+  jhipsterVersion: string
+  buildTool: any
   template: any
-  options: Map<string,string>
+  options: Map<string,any>
   promptAnswers: IPromptAnswers
+  entityConfig: any
+  yourOptionKey: string
+  env: ILogging
 
   getAllJhipsterConfig: () => any
   getAngularAppName: () => string
+  getAngularXAppName: () => string
   printJHipsterLogo: () => void
   async: () => any
   prompt: ([]) => Promise<any>
   registerModule: (...module: string[]) => void
   installDependencies: (object) => void
+  updateEntityConfig: (filename: string, key: string, value: string) => void
 
   log: (msg: string) => void
   error: (msg: string) => void

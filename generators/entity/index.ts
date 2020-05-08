@@ -1,25 +1,28 @@
-const chalk = require('chalk');
-const BaseGenerator = require('generator-jhipster/generators/generator-base');
+import "chalk"
+import {IBaseGeneratorConstructor} from "../../types";
+
+const BaseGenerator: IBaseGeneratorConstructor = require('generator-jhipster/generators/generator-base');
 const jhipsterConstants = require('generator-jhipster/generators/generator-constants');
 const packagejs = require('../../package.json');
 
 module.exports = class extends BaseGenerator {
   get initializing() {
+    const that = this
     return {
       readConfig() {
-        this.entityConfig = this.options.entityConfig;
-        this.jhipsterAppConfig = this.getAllJhipsterConfig();
-        if (!this.jhipsterAppConfig) {
-          this.error('Cannot read .yo-rc.json');
+        that.entityConfig = (that.options as any).entityConfig;
+        that.jhipsterAppConfig = that.getAllJhipsterConfig();
+        if (!that.jhipsterAppConfig) {
+          that.error('Cannot read .yo-rc.json');
         }
       },
       displayLogo() {
-        this.log(chalk.white(`Running ${chalk.bold('JHipster rain')} Generator! ${chalk.yellow(`v${packagejs.version}\n`)}`));
+        that.log(chalk.white(`Running ${chalk.bold('JHipster rain')} Generator! ${chalk.yellow(`v${packagejs.version}\n`)}`));
       },
       validate() {
         // this shouldn't be run directly
-        if (!this.entityConfig) {
-          this.env.error(
+        if (!that.entityConfig) {
+          that.env.error(
             `${chalk.red.bold('ERROR!')} This sub generator should be used only from JHipster and cannot be run directly...\n`
           );
         }
@@ -55,46 +58,47 @@ module.exports = class extends BaseGenerator {
   }
 
   get writing() {
+    const that = this
     return {
       updateFiles() {
         // read config from .yo-rc.json
-        this.baseName = this.jhipsterAppConfig.baseName;
-        this.packageName = this.jhipsterAppConfig.packageName;
-        this.packageFolder = this.jhipsterAppConfig.packageFolder;
-        this.clientFramework = this.jhipsterAppConfig.clientFramework;
-        this.clientPackageManager = this.jhipsterAppConfig.clientPackageManager;
-        this.buildTool = this.jhipsterAppConfig.buildTool;
+        that.baseName = that.jhipsterAppConfig.baseName;
+        that.packageName = that.jhipsterAppConfig.packageName;
+        that.packageFolder = that.jhipsterAppConfig.packageFolder;
+        that.clientFramework = that.jhipsterAppConfig.clientFramework;
+        that.clientPackageManager = that.jhipsterAppConfig.clientPackageManager;
+        that.buildTool = that.jhipsterAppConfig.buildTool;
 
         // use function in generator-base.js from generator-jhipster
-        this.angularAppName = this.getAngularXAppName();
+        that.angularAppName = that.getAngularXAppName();
 
         // use constants from generator-constants.js
-        const javaDir = `${jhipsterConstants.SERVER_MAIN_SRC_DIR + this.packageFolder}/`;
+        const javaDir = `${jhipsterConstants.SERVER_MAIN_SRC_DIR + that.packageFolder}/`;
         const resourceDir = jhipsterConstants.SERVER_MAIN_RES_DIR;
         const webappDir = jhipsterConstants.CLIENT_MAIN_SRC_DIR;
 
-        const entityName = this.entityConfig.entityClass;
+        const entityName = that.entityConfig.entityClass;
 
         // show all variables
-        this.log('\n--- some const ---');
-        this.log(`javaDir=${javaDir}`);
-        this.log(`resourceDir=${resourceDir}`);
-        this.log(`webappDir=${webappDir}`);
+        that.log('\n--- some const ---');
+        that.log(`javaDir=${javaDir}`);
+        that.log(`resourceDir=${resourceDir}`);
+        that.log(`webappDir=${webappDir}`);
 
-        this.log('\n--- entityName ---');
-        this.log(`entityName=${entityName}`);
+        that.log('\n--- entityName ---');
+        that.log(`entityName=${entityName}`);
 
-        this.log('------\n');
+        that.log('------\n');
 
         // do your stuff here
       },
 
       writeFiles() {
-        this.template('dummy.txt', 'dummy.txt');
+        that.template('dummy.txt', 'dummy.txt');
       },
 
       updateConfig() {
-        this.updateEntityConfig(this.entityConfig.filename, 'yourOptionKey', this.yourOptionKey);
+        that.updateEntityConfig(that.entityConfig.filename, 'yourOptionKey', that.yourOptionKey);
       }
     };
   }
