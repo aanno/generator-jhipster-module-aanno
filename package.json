@@ -65,7 +65,7 @@
   },
   "scripts": {
     "prettier:format": "prettier --write \"{,**/}*.{js,json,ts,tsx,md,yml}\"",
-    "no-pretest": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "pretest": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint-fix": "eslint . --fix --ext .js,.jsx,.ts,.tsx",
     "release": "git push && git push --tags && npm publish",

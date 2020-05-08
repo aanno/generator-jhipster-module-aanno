@@ -55,7 +55,7 @@
   },
   "overrides": [
     {
-      "files": ["test/**/*.js"],
+      "files": ["test/**/*.{js,ts}"],
       "env": { "mocha": true }
     }
   ]
