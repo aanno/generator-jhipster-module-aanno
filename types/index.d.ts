@@ -67,7 +67,7 @@ export class CBaseGenerator implements IOptions, ILogging, IJHipsterAppConfig {
 
     async: () => any
 
-    prompt: ([]) => Promise<any>
+    prompt: (a: Array<any>) => Promise<any>
 
     registerModule: (...module: string[]) => void
 
