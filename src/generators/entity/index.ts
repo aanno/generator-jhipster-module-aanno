@@ -1,12 +1,18 @@
 import { bold, yellow, red, green, white } from "chalk"
-import { IBaseGeneratorConstructor } from "../../types"
+import { IBaseGeneratorConstructor } from "../../../types"
 
 const BaseGenerator: IBaseGeneratorConstructor = require("generator-jhipster/generators/generator-base")
 const jhipsterConstants = require("generator-jhipster/generators/generator-constants")
 // Not working for dist
-const packagejs = require("../../package.json")
+// const packagejs = require("../../package.json")
+const packagejs = {
+  version: "dummmy",
+  dependencies: {
+    dummy: "dummy-1.1.0"
+  }
+}
 
-module.exports = class extends BaseGenerator {
+export = class EntityGenerator extends BaseGenerator {
     get initializing() {
         const that = this
         return {

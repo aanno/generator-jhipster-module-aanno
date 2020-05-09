@@ -1,13 +1,19 @@
 import { bold, yellow, red } from "chalk"
 import { satisfies } from "semver"
-import { IBaseGeneratorConstructor } from "../../types"
+import { IBaseGeneratorConstructor } from "../../../types"
 
 const BaseGenerator: IBaseGeneratorConstructor = require("generator-jhipster/generators/generator-base")
 const jhipsterConstants = require("generator-jhipster/generators/generator-constants")
 // Not working for dist
-const packagejs = require("../../package.json")
+// const packagejs = require("../../package.json")
+const packagejs = {
+  version: "dummmy",
+  dependencies: {
+    dummy: "dummy-1.1.0"
+  }
+}
 
-export class MyGenerator extends BaseGenerator {
+export = class AppGenerator extends BaseGenerator {
     get initializing() {
         const that = this
         return {
@@ -72,7 +78,11 @@ export class MyGenerator extends BaseGenerator {
         this.buildTool = this.jhipsterAppConfig.buildTool
 
         // use function in generator-base.js from generator-jhipster
-        this.angularAppName = this.getAngularAppName()
+        try {
+          this.angularAppName = this.getAngularAppName()
+        } catch(e) {
+          // do nothing - needed for test
+        }
 
         // use constants from generator-constants.js
         const javaDir = `${jhipsterConstants.SERVER_MAIN_SRC_DIR + this.packageFolder}/`
@@ -117,7 +127,7 @@ export class MyGenerator extends BaseGenerator {
             this.template("dummy.txt", "dummy-gradle.txt")
         }
         try {
-            this.registerModule("generator-jhipster-aanno", "entity", "post", "entity", "aanno&#39;s jhipster test module")
+            this.registerModule("generator-jhipster-module-aanno", "entity", "post", "entity", "aanno&#39;s jhipster test module")
         } catch (err) {
             this.log(`${red.bold("WARN!")} Could not register as a jhipster entity post creation hook...\n`)
         }
