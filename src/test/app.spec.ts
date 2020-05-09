@@ -41,8 +41,9 @@ describe("JHipster generator aanno", () => {
                 .inTmpDir(dir => {
                     mkdirsSync(join(dir, "templates/test"))
                     copySync(join(__dirname, "../generators/app"), dir)
-                    copySync(join(__dirname, "../../templates/test/gradle-react"),
-                      join(dir, "templates/test/"))
+                    copySync(join(__dirname, "../../templates/app/dummy.txt"),
+                      join(dir, "templates/dummy.txt"))
+                    copySync(join(__dirname, "../../templates/test/gradle-react"), dir)
                 })
                 .withOptions({
                     testmode: true
