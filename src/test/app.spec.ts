@@ -4,14 +4,14 @@ import {copySync, mkdirsSync} from "fs-extra"
 import { file } from "yeoman-assert"
 import { Constructor, run } from "yeoman-test"
 // import "../generators/app"
-const MyGenerator = require("../generators/app")
+const AppGenerator = require("../generators/app")
 
 describe("JHipster generator aanno", () => {
-    // const generator: Constructor<Generator> = MyGenerator.new
+    // const generator: Constructor<Generator> = AppGenerator.new
     describe("Test with Maven and AngularX", () => {
         beforeEach(done => {
             // run(join(__dirname, '../generators/app'))
-            run(MyGenerator as any)
+            run(AppGenerator)
                 .inTmpDir(dir => {
                     // copySync(join(__dirname, "../../package.json"), dir)
                     mkdirsSync(join(dir, "templates"))
@@ -37,7 +37,7 @@ describe("JHipster generator aanno", () => {
     describe("Test with Gradle and React", () => {
         beforeEach(done => {
             // run(join(__dirname, '../generators/app'))
-            run(MyGenerator as any)
+            run(AppGenerator as any)
                 .inTmpDir(dir => {
                     mkdirsSync(join(dir, "templates/test"))
                     copySync(join(__dirname, "../generators/app"), dir)
