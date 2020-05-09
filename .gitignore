@@ -10,3 +10,10 @@ test/temp/
 *debug.log*
 .vscode
 /dist
+*.js
+*.js.map
+*.d.ts.map
+/generators/**/*.d.ts
+/test/**/*.d.ts
+
+*.log

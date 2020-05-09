@@ -14,11 +14,10 @@
     "url": ""
   },
   "files": [
-    "dist/generators",
-    "generators/**/*.txt"
+    "generators"
   ],
-  "main": "dist/generators/app/index.js",
-  "types": "dist/**/*.d.ts",
+  "main": "generators/app/index.js",
+  "types": "**/*.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/aanno/generator-jhipster-aanno.git"
@@ -75,7 +74,7 @@
     "release:minor": "npm version minor -a -m \"Update to %s\" && npm run release",
     "release:major": "npm version major -a -m \"Update to %s\" && npm run release",
     "dist": "tsc -p .",
-    "test:dist": "mocha --package package.json dist/test/**/*.spec.js",
+    "test:dist": "mocha --package package.json test/**/*.spec.js",
     "test2": "mocha test/**/*.spec.js",
     "test3": "ts-mocha test/**/*.spec.ts",
     "test": "mocha -r ts-node/register -r ignore-styles -r jsdom-global/register test/**/*.spec.ts"
