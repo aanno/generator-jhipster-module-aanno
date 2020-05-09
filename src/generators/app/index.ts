@@ -13,7 +13,7 @@ const packagejs = {
   }
 }
 
-export class MyGenerator extends BaseGenerator {
+export = class AppGenerator extends BaseGenerator {
     get initializing() {
         const that = this
         return {

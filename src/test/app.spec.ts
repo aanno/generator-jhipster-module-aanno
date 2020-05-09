@@ -3,8 +3,8 @@ import { join } from "path"
 import {copySync, mkdirsSync} from "fs-extra"
 import { file } from "yeoman-assert"
 import { Constructor, run } from "yeoman-test"
-// import {Generator} from "yeoman-generator"
-import { MyGenerator } from "../generators/app"
+// import "../generators/app"
+const MyGenerator = require("../generators/app")
 
 describe("JHipster generator aanno", () => {
     // const generator: Constructor<Generator> = MyGenerator.new

@@ -12,7 +12,7 @@ const packagejs = {
   }
 }
 
-module.exports = class extends BaseGenerator {
+export = class EntityGenerator extends BaseGenerator {
     get initializing() {
         const that = this
         return {
