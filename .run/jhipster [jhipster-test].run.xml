@@ -1,0 +1,5 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="jhipster [jhipster-test]" type="NodeJSConfigurationType" application-parameters="--with-entities" node-parameters="--inspect-brk" path-to-js-file="$USER_HOME$/.npm-global/bin/jhipster" working-dir="$USER_HOME$/tmp/jhipster-test">
+    <method v="2" />
+  </configuration>
+</component>

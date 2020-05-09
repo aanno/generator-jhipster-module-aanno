@@ -77,7 +77,7 @@ cat .jhipster/modules/jhi-hooks.json
     "description": "aanno&#39;s jhipster test module",
     "hookFor": "entity",
     "hookType": "post",
-    "generatorCallback": "jhipster-aanno:entity"
+    "generatorCallback": "jhipster-module-aanno:entity"
   }
 ]
 ```
