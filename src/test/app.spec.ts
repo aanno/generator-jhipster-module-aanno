@@ -13,8 +13,9 @@ describe("JHipster generator aanno", () => {
             // run(join(__dirname, '../generators/app'))
             run(MyGenerator as any)
                 .inTmpDir(dir => {
+                    // copySync(join(__dirname, "../../package.json"), dir)
                     copySync(join(__dirname, "../generators/app"), dir)
-                    copySync(join(__dirname, "../test/templates/maven-angularX"), dir)
+                    copySync(join(__dirname, "../../templates/test/maven-angularX"), dir)
                 })
                 .withOptions({
                     testmode: true
@@ -36,7 +37,7 @@ describe("JHipster generator aanno", () => {
             run(MyGenerator as any)
                 .inTmpDir(dir => {
                     copySync(join(__dirname, "../generators/app"), dir)
-                    copySync(join(__dirname, "../test/templates/gradle-react"), dir)
+                    copySync(join(__dirname, "templates/test/gradle-react"), dir)
                 })
                 .withOptions({
                     testmode: true
