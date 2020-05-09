@@ -3,6 +3,7 @@ import { IBaseGeneratorConstructor } from "../../types"
 
 const BaseGenerator: IBaseGeneratorConstructor = require("generator-jhipster/generators/generator-base")
 const jhipsterConstants = require("generator-jhipster/generators/generator-constants")
+// Not working for dist
 const packagejs = require("../../package.json")
 
 module.exports = class extends BaseGenerator {

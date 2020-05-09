@@ -14,7 +14,8 @@
     "url": ""
   },
   "files": [
-    "generators"
+    "dist/generators",
+    "generators/**/*.txt"
   ],
   "main": "dist/generators/app/index.js",
   "types": "dist/**/*.d.ts",
@@ -66,7 +67,7 @@
   },
   "scripts": {
     "prettier:format": "prettier --write \"{,**/}*.{js,json,ts,tsx,md,yml}\"",
-    "pretest": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "no-pretest": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint-fix": "eslint . --fix --ext .js,.jsx,.ts,.tsx",
     "release": "git push && git push --tags && npm publish",
@@ -74,6 +75,7 @@
     "release:minor": "npm version minor -a -m \"Update to %s\" && npm run release",
     "release:major": "npm version major -a -m \"Update to %s\" && npm run release",
     "dist": "tsc -p .",
+    "test:dist": "mocha --package package.json dist/test/**/*.spec.js",
     "test2": "mocha test/**/*.spec.js",
     "test3": "ts-mocha test/**/*.spec.ts",
     "test": "mocha -r ts-node/register -r ignore-styles -r jsdom-global/register test/**/*.spec.ts"
