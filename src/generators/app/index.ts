@@ -1,6 +1,7 @@
 import { bold, yellow, red } from "chalk"
 import { satisfies } from "semver"
 import { IBaseGeneratorConstructor } from "../../../types"
+import { join } from "path"
 
 const BaseGenerator: IBaseGeneratorConstructor = require("generator-jhipster/generators/generator-base")
 const jhipsterConstants = require("generator-jhipster/generators/generator-constants")
@@ -159,5 +160,13 @@ export = class AppGenerator extends BaseGenerator {
 
     end() {
         this.log("End of aanno generator")
+    }
+
+    // ATTENTION: no method as a method would be called by 'yo'
+    // TODO: this might not be wise - as it changes the normal `templatePath` for jhipster
+    templatePath: (a: string) => string = a => {
+      const result = join(__dirname, "../../../templates/app/", a)
+      this.warning("templatePath " + a + " " + result + " " + __dirname + " " + process.cwd())
+      return result
     }
 }

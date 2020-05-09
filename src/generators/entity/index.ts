@@ -1,5 +1,6 @@
 import { bold, yellow, red, green, white } from "chalk"
 import { IBaseGeneratorConstructor } from "../../../types"
+import {join} from "path";
 
 const BaseGenerator: IBaseGeneratorConstructor = require("generator-jhipster/generators/generator-base")
 const jhipsterConstants = require("generator-jhipster/generators/generator-constants")
@@ -117,4 +118,11 @@ export = class EntityGenerator extends BaseGenerator {
             this.log(`\n${bold.green("rain enabled")}`)
         }
     }
+
+    templatePath: (a: string) => string = a => {
+      const result = join(__dirname, "../../../templates/entity/", a)
+      this.warning("templatePath " + a + " " + result + " " + __dirname)
+      return result
+    }
+
 }
