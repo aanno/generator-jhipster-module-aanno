@@ -127,7 +127,7 @@ export = class AppGenerator extends BaseGenerator {
             this.template("dummy.txt", "dummy-gradle.txt")
         }
         try {
-            this.registerModule("generator-jhipster-aanno", "entity", "post", "entity", "aanno&#39;s jhipster test module")
+            this.registerModule("generator-jhipster-module-aanno", "entity", "post", "entity", "aanno&#39;s jhipster test module")
         } catch (err) {
             this.log(`${red.bold("WARN!")} Could not register as a jhipster entity post creation hook...\n`)
         }
