@@ -1,6 +1,6 @@
 import { describe, beforeEach } from "mocha"
 import { join } from "path"
-import { copySync } from "fs-extra"
+import {copySync, mkdirsSync} from "fs-extra"
 import { file } from "yeoman-assert"
 import { Constructor, run } from "yeoman-test"
 // import {Generator} from "yeoman-generator"
@@ -14,7 +14,10 @@ describe("JHipster generator aanno", () => {
             run(MyGenerator as any)
                 .inTmpDir(dir => {
                     // copySync(join(__dirname, "../../package.json"), dir)
+                    mkdirsSync(join(dir, "templates"))
                     copySync(join(__dirname, "../generators/app"), dir)
+                    copySync(join(__dirname, "../../templates/app/dummy.txt"),
+                      join(dir, "templates/dummy.txt"))
                     copySync(join(__dirname, "../../templates/test/maven-angularX"), dir)
                 })
                 .withOptions({
@@ -36,8 +39,10 @@ describe("JHipster generator aanno", () => {
             // run(join(__dirname, '../generators/app'))
             run(MyGenerator as any)
                 .inTmpDir(dir => {
+                    mkdirsSync(join(dir, "templates/test"))
                     copySync(join(__dirname, "../generators/app"), dir)
-                    copySync(join(__dirname, "templates/test/gradle-react"), dir)
+                    copySync(join(__dirname, "../../templates/test/gradle-react"),
+                      join(dir, "templates/test/"))
                 })
                 .withOptions({
                     testmode: true

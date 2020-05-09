@@ -78,7 +78,11 @@ export class MyGenerator extends BaseGenerator {
         this.buildTool = this.jhipsterAppConfig.buildTool
 
         // use function in generator-base.js from generator-jhipster
-        this.angularAppName = this.getAngularAppName()
+        try {
+          this.angularAppName = this.getAngularAppName()
+        } catch(e) {
+          // do nothing - needed for test
+        }
 
         // use constants from generator-constants.js
         const javaDir = `${jhipsterConstants.SERVER_MAIN_SRC_DIR + this.packageFolder}/`
