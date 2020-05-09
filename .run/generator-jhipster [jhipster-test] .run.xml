@@ -1,0 +1,5 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="generator-jhipster [jhipster-test] " type="NodeJSConfigurationType" application-parameters="--with-entities --prefer-local" node-parameters="--inspect-brk --preserve-symlinks" path-to-js-file="$PROJECT_DIR$/../../github/generator-jhipster/cli/jhipster.js" working-dir="$USER_HOME$/tmp/jhipster-test">
+    <method v="2" />
+  </configuration>
+</component>
