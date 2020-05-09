@@ -13,11 +13,6 @@
     "email": "aanno.trash@gmail.com",
     "url": ""
   },
-  "files": [
-    "generators"
-  ],
-  "main": "generators/app/index.js",
-  "types": "**/*.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/aanno/generator-jhipster-aanno.git"
@@ -65,6 +60,13 @@
     "yeoman-test": "2.0.0"
   },
   "scripts": {
+    "build": "tsc -p .",
+    "rebuild": "npm run clean && npm run build",
+    "watch": "tsc -p . --watch",
+    "clean": "rimraf ./lib",
+    "lint-gtsg": "tslint -p ./ -t verbose && markdownlint ./templates/**/*.md ./templates/**/*.md.ejs || exit 0",
+    "test-gtsg": "mocha",
+    "prepare": "npm run rebuild",
     "prettier:format": "prettier --write \"{,**/}*.{js,json,ts,tsx,md,yml}\"",
     "no-pretest": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",

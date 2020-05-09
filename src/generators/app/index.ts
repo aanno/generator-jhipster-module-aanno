@@ -1,6 +1,6 @@
 import { bold, yellow, red } from "chalk"
 import { satisfies } from "semver"
-import { IBaseGeneratorConstructor } from "../../types"
+import { IBaseGeneratorConstructor } from "../../../types"
 
 const BaseGenerator: IBaseGeneratorConstructor = require("generator-jhipster/generators/generator-base")
 const jhipsterConstants = require("generator-jhipster/generators/generator-constants")
