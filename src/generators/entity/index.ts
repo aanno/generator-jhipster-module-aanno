@@ -38,6 +38,7 @@ export = class EntityGenerator extends BaseGenerator {
     }
 
     prompting() {
+        this.warning("module-aanno: entiy: prompting")
         // don't prompt if data are imported from a file
         if (
             this.entityConfig.useConfigurationFile === true &&
@@ -68,6 +69,7 @@ export = class EntityGenerator extends BaseGenerator {
         const that = this
         return {
             updateFiles() {
+                that.warning("module-aanno: entiy: writing/updateFiles")
                 // read config from .yo-rc.json
                 that.baseName = that.jhipsterAppConfig.baseName
                 that.packageName = that.jhipsterAppConfig.packageName

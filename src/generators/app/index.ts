@@ -50,6 +50,7 @@ export = class AppGenerator extends BaseGenerator {
     }
 
     prompting() {
+        this.warning("module-aanno: app: prompting")
         const prompts = [
             {
                 when: () => typeof this.message === "undefined",
@@ -69,6 +70,7 @@ export = class AppGenerator extends BaseGenerator {
     }
 
     writing() {
+        this.warning("module-aanno: app: writing")
         // read config from .yo-rc.json
         this.baseName = this.jhipsterAppConfig.baseName
         this.packageName = this.jhipsterAppConfig.packageName

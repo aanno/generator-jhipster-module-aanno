@@ -57,6 +57,31 @@ Apache-2.0 © [Thomas Pasch]()
 [daviddm-image]: https://david-dm.org/aanno/generator-jhipster-module-aannonno.svg?theme=shields.io
 [daviddm-url]: https://david-dm.org/aanno/generator-jhipster-module-aannonno
 
+## Install from github
+
+```bash
+npm install -D aanno/generator-jhipster-module-aanno
+```
+
+## Hook
+
+```bash
+cat .jhipster/modules/jhi-hooks.json
+```
+
+```json
+[
+  {
+    "name": "Aanno generator",
+    "npmPackageName": "generator-jhipster-module-aanno",
+    "description": "aanno&#39;s jhipster test module",
+    "hookFor": "entity",
+    "hookType": "post",
+    "generatorCallback": "jhipster-aanno:entity"
+  }
+]
+```
+
 ## Links
 
 - [eslint with typescript](https://github.com/typescript-eslint/typescript-eslint/blob/master/docs/getting-started/linting/README.md)
