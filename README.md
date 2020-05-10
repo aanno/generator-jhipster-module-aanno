@@ -89,3 +89,28 @@ cat .jhipster/modules/jhi-hooks.json
 - [prettier with eslint with typescript](https://www.robertcooper.me/using-eslint-and-prettier-in-a-typescript-project/)
 - [problem with es5/es6 classes](https://stackoverflow.com/questions/51860043/javascript-es6-typeerror-class-constructor-client-cannot-be-invoked-without-ne)
 - https://github.com/yeoman/yeoman-test/issues/105
+
+## yeoman generator detection
+
+- [detect environment](https://github.com/yeoman/environment)
+  - https://stackoverflow.com/questions/48680805/run-a-yeoman-sub-generator-using-yeoman-environment
+  - https://yeoman.io/authoring/integrating-yeoman.html
+  - https://stackoverflow.com/questions/33010498/composewith-in-yeoman-generator-not-emitting-an-end-event-and-thus-not-driving
+- [environement API](https://yeoman.github.io/environment/Environment.html)
+
+## yeoman/jhipster docs
+
+- [composeWith](https://yeoman.io/authoring/composability.html)
+  - https://stackoverflow.com/questions/29808555/use-composewith-options-in-sub-generator
+- [templatePath](https://yeoman.io/authoring/file-system.html)
+- [generator-jhipster-module](https://github.com/jhipster/generator-jhipster-module)
+- https://www.jhipster.tech/modules/creating-a-module/
+- https://stackoverflow.com/questions/52650734/override-file-templates-with-jhipster-blueprint
+- jhipster module examples
+
+  - https://github.com/ecostanzi/generator-jhipster-dbsequences
+
+## Known bugs
+
+- [jhipster module dev does not work with `npm link`](https://github.com/jhipster/generator-jhipster/issues/11747)
+- [import-jdl does not support hooks](https://stackoverflow.com/questions/45565899/jhipster-module-hooks-error)
