@@ -114,3 +114,4 @@ cat .jhipster/modules/jhi-hooks.json
 
 - [jhipster module dev does not work with `npm link`](https://github.com/jhipster/generator-jhipster/issues/11747)
 - [import-jdl does not support hooks](https://stackoverflow.com/questions/45565899/jhipster-module-hooks-error)
+- [generator-jhipster-module has problem with entity sub-generator](https://github.com/jhipster/generator-jhipster-module/issues/104)
