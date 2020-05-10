@@ -10,8 +10,8 @@ describe("JHipster generator aanno", () => {
     // const generator: Constructor<Generator> = AppGenerator.new
     describe("Test with Maven and AngularX", () => {
         beforeEach(done => {
-            // run(join(__dirname, '../generators/app'))
-            run(AppGenerator)
+            run(join(__dirname, '../generators/app'))
+            // run(AppGenerator)
                 .inTmpDir(dir => {
                     // copySync(join(__dirname, "../../package.json"), dir)
                     mkdirsSync(join(dir, "templates"))
@@ -36,8 +36,8 @@ describe("JHipster generator aanno", () => {
 
     describe("Test with Gradle and React", () => {
         beforeEach(done => {
-            // run(join(__dirname, '../generators/app'))
-            run(AppGenerator as any)
+            run(join(__dirname, '../generators/app'))
+            // run(AppGenerator as any)
                 .inTmpDir(dir => {
                     mkdirsSync(join(dir, "templates/test"))
                     copySync(join(__dirname, "../generators/app"), dir)

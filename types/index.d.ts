@@ -55,7 +55,7 @@ export class CBaseGenerator implements IOptions, ILogging, IJHipsterAppConfig {
 
     yourOptionKey: string
 
-    env: ILogging
+    env: any // ILogging
 
     getAllJhipsterConfig: () => any
 
@@ -83,5 +83,5 @@ export class CBaseGenerator implements IOptions, ILogging, IJHipsterAppConfig {
 }
 
 interface IBaseGeneratorConstructor {
-    new (): CBaseGenerator
+    new (...args: any): CBaseGenerator
 }

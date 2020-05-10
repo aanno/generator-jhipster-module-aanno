@@ -2,6 +2,7 @@ import { bold, yellow, red } from "chalk"
 import { satisfies } from "semver"
 import { IBaseGeneratorConstructor } from "../../../types"
 import { join } from "path"
+const EntityGenerator = require("../entity/index")
 
 const BaseGenerator: IBaseGeneratorConstructor = require("generator-jhipster/generators/generator-base")
 const jhipsterConstants = require("generator-jhipster/generators/generator-constants")
@@ -14,8 +15,21 @@ const packagejs = {
   }
 }
 
-export = class AppGenerator extends BaseGenerator {
+class AppGenerator extends BaseGenerator {
+
     get initializing() {
+      // register
+      // this.env.registerStub(AppGenerator, "jhipster-module-aanno:app")
+      // this.env.registerStub(EntityGenerator, "jhipster-module-aanno:entity")
+      // this.env.store.addPackage("jhipster-module-aanno", join(__dirname, "../../.."))
+      /*
+      this.env.lookup(() => {
+        this.env.run("generator-jhipster-module-aanno", {"skip-install": true}, err => {
+          console.log("done: " + err);
+        });
+      });
+       */
+
         const that = this
         return {
             init(args) {
@@ -170,3 +184,5 @@ export = class AppGenerator extends BaseGenerator {
       return result
     }
 }
+
+export = AppGenerator
