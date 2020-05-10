@@ -1,5 +1,5 @@
 {
-  "name": "generator-jhipster-aanno",
+  "name": "generator-jhipster-module-aanno",
   "version": "0.0.0",
   "description": "aanno&#39;s jhipster test module",
   "keywords": [
@@ -7,7 +7,7 @@
     "jhipster-module",
     "jhipster-6"
   ],
-  "homepage": "https://github.com/aanno/generator-jhipster-aanno",
+  "homepage": "https://github.com/aanno/generator-jhipster-module-aanno",
   "author": {
     "name": "Thomas Pasch",
     "email": "aanno.trash@gmail.com",
@@ -19,7 +19,7 @@
   "main": "generators/app/index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aanno/generator-jhipster-aanno.git"
+    "url": "git+https://github.com/aanno/generator-jhipster-module-aanno.git"
   },
   "dependencies": {
     "chalk": "3.0.0",
@@ -67,6 +67,6 @@
   },
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/aanno/generator-jhipster-aanno/issues"
+    "url": "https://github.com/aanno/generator-jhipster-module-aanno/issues"
   }
 }

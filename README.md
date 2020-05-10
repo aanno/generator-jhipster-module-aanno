@@ -1,4 +1,4 @@
-# generator-jhipster-aanno
+# generator-jhipster-module-aanno
 
 [![NPM version][npm-image]][npm-url] [![Build Status][github-actions-image]][github-actions-url] [![Dependency Status][daviddm-image]][daviddm-url]
 
@@ -21,13 +21,13 @@ As this is a [JHipster](https://www.jhipster.tech/) module, we expect you have J
 To install this module:
 
 ```bash
-npm install -g generator-jhipster-aanno
+npm install -g generator-jhipster-module-aanno
 ```
 
 To update this module:
 
 ```bash
-npm update -g generator-jhipster-aanno
+npm update -g generator-jhipster-module-aanno
 ```
 
 ## With Yarn
@@ -35,13 +35,13 @@ npm update -g generator-jhipster-aanno
 To install this module:
 
 ```bash
-yarn global add generator-jhipster-aanno
+yarn global add generator-jhipster-module-aanno
 ```
 
 To update this module:
 
 ```bash
-yarn global upgrade generator-jhipster-aanno
+yarn global upgrade generator-jhipster-module-aanno
 ```
 
 # Usage
@@ -50,9 +50,9 @@ yarn global upgrade generator-jhipster-aanno
 
 Apache-2.0 © [Thomas Pasch]()
 
-[npm-image]: https://img.shields.io/npm/v/generator-jhipster-aanno.svg
-[npm-url]: https://npmjs.org/package/generator-jhipster-aanno
-[github-actions-image]: https://github.com/aanno/generator-jhipster-aanno/workflows/Build/badge.svg
-[github-actions-url]: https://github.com/aanno/generator-jhipster-aanno/actions
-[daviddm-image]: https://david-dm.org/aanno/generator-jhipster-aanno.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org/aanno/generator-jhipster-aanno
+[npm-image]: https://img.shields.io/npm/v/generator-jhipster-module-aanno.svg
+[npm-url]: https://npmjs.org/package/generator-jhipster-module-aanno
+[github-actions-image]: https://github.com/aanno/generator-jhipster-module-aanno/workflows/Build/badge.svg
+[github-actions-url]: https://github.com/aanno/generator-jhipster-module-aanno/actions
+[daviddm-image]: https://david-dm.org/aanno/generator-jhipster-module-aanno.svg?theme=shields.io
+[daviddm-url]: https://david-dm.org/aanno/generator-jhipster-module-aanno
