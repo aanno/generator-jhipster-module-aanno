@@ -172,7 +172,7 @@ class AppGenerator extends BaseGenerator {
         if (this.options["skip-install"]) {
             this.log(logMsg)
         } else {
-            this.installDependencies(installConfig)
+            // this.installDependencies(installConfig)
         }
     }
 
