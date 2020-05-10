@@ -15,8 +15,8 @@ const packagejs = {
 
 export = class EntityGenerator extends BaseGenerator {
 
-  constructor(...args: any) {
-    super(args);
+  constructor(args: any, options: any) {
+    super(args, options);
   }
 
     get initializing() {
