@@ -83,5 +83,5 @@ export class CBaseGenerator implements IOptions, ILogging, IJHipsterAppConfig {
 }
 
 interface IBaseGeneratorConstructor {
-    new (...args: any): CBaseGenerator
+    new (args: any, options: any): CBaseGenerator
 }

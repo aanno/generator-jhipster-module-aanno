@@ -33,7 +33,7 @@ export = class EntityGenerator extends BaseGenerator {
                 that.log(white(`Running ${bold("JHipster rain")} Generator! ${yellow(`v${packagejs.version}\n`)}`))
             },
             validate() {
-              that.log("\n\nentity that: " + JSON.stringify(that.options, null, 2))
+              // that.log("\n\nentity that: " + JSON.stringify(that.options, null, 2))
               // that.log("\n\nentity this: " + JSON.stringify(this as any, null, 2))
                 // this shouldn't be run directly
                 if (!that.entityConfig) {

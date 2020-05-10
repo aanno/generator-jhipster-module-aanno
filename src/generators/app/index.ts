@@ -88,9 +88,8 @@ class AppGenerator extends BaseGenerator {
     }
 
     writing() {
-        const result = this.env.lookup()
-        this.warning("module-aanno: app: writing: "
-          + JSON.stringify(result, null, 2))
+        // const result = this.env.lookup()
+        this.warning("module-aanno: app: writing")
         // read config from .yo-rc.json
         this.baseName = this.jhipsterAppConfig.baseName
         this.packageName = this.jhipsterAppConfig.packageName
