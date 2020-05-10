@@ -3,6 +3,7 @@ import { satisfies } from "semver"
 import { IBaseGeneratorConstructor } from "../../../types"
 import { join } from "path"
 const EntityGenerator = require("../entity/index")
+const Environment = require("yeoman-environment")
 
 const BaseGenerator: IBaseGeneratorConstructor = require("generator-jhipster/generators/generator-base")
 const jhipsterConstants = require("generator-jhipster/generators/generator-constants")
@@ -65,7 +66,9 @@ class AppGenerator extends BaseGenerator {
     }
 
     prompting() {
-        this.warning("module-aanno: app: prompting")
+        const result = this.env.lookup()
+        this.warning("module-aanno: app: prompting: "
+          + JSON.stringify(result, null, 2))
         const prompts = [
             {
                 when: () => typeof this.message === "undefined",
@@ -85,7 +88,9 @@ class AppGenerator extends BaseGenerator {
     }
 
     writing() {
-        this.warning("module-aanno: app: writing")
+        const result = this.env.lookup()
+        this.warning("module-aanno: app: writing: "
+          + JSON.stringify(result, null, 2))
         // read config from .yo-rc.json
         this.baseName = this.jhipsterAppConfig.baseName
         this.packageName = this.jhipsterAppConfig.packageName
