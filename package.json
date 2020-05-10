@@ -45,7 +45,7 @@
   },
   "scripts": {
     "prettier:format": "prettier --write \"{,**/}*.{js,json,md,yml}\"",
-    "pretest": "eslint .",
+    "no-pretest": "eslint .",
     "lint": "eslint .",
     "lint-fix": "eslint . --fix",
     "release": "git push && git push --tags && npm publish",

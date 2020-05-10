@@ -7,6 +7,7 @@ module.exports = class extends BaseGenerator {
     get initializing() {
         return {
             readConfig() {
+                this.warning('aanno entity read config: ' + JSON.stringify(this.options, null, 2));
                 this.entityConfig = this.options.entityConfig;
                 this.jhipsterAppConfig = this.getAllJhipsterConfig();
                 if (!this.jhipsterAppConfig) {
@@ -57,6 +58,7 @@ module.exports = class extends BaseGenerator {
     get writing() {
         return {
             updateFiles() {
+                this.warning('aanno entity updateFiles');
                 // read config from .yo-rc.json
                 this.baseName = this.jhipsterAppConfig.baseName;
                 this.packageName = this.jhipsterAppConfig.packageName;

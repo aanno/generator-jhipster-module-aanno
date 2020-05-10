@@ -8,6 +8,7 @@ module.exports = class extends BaseGenerator {
     get initializing() {
         return {
             init(args) {
+                this.warning('aanno app init: ' + JSON.stringify(args, null, 2));
                 if (args === 'default') {
                     // do something when argument is 'default'
                     this.message = 'default message';
@@ -59,6 +60,7 @@ module.exports = class extends BaseGenerator {
     }
 
     writing() {
+        this.warning('aanno app writing');
         // read config from .yo-rc.json
         this.baseName = this.jhipsterAppConfig.baseName;
         this.packageName = this.jhipsterAppConfig.packageName;
